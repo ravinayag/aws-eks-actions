@@ -1,4 +1,4 @@
-name: 'AWS EKS kubectl'
+name: 'AWS EKS kubectl Actions'
 author: ravinayag
 description: An GitHub Action allowing you to integrate AWS EKS via kubectl
 
