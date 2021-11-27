@@ -21,18 +21,6 @@ inputs:
   cluster_name:
     description: Your EKS cluster name 
     required: true
-  image_tag:
-    description: The image tag of your build version, ex:latest
-    required: true    
-  ECR_REPOSITORY:
-    description: Your Repository name under the registory
-    required: true    
-  K8S_DEPLOYMENT_NAME:
-    description: Your Deployment under K8s Cluster
-    required: true    
-  K8S_NAMESPACE:
-    description: Your K8S namespace for K8S_DEPLOYMENT_NAME
-    required: true    
   args:
     description: The arguments that you want to pass through to the kubectl command
     required: true
