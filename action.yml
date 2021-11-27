@@ -1,0 +1,38 @@
+name: 'AWS EKS kubectl'
+author: ravinayag
+description: An GitHub Action allowing you to integrate AWS EKS via kubectl
+
+branding:
+  color: 'black'
+  icon: 'command'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+inputs:
+  aws_access_key_id:
+    description: Your AWS_ACCESS_KEY_ID
+    required: true
+  aws_secret_access_key:
+    description: Your AWS_SECRET_ACCESS_KEY
+    required: true
+  aws_region:
+    description: Where the EKS Cluster region set
+    required: true
+  cluster_name:
+    description: Your EKS cluster name 
+    required: true
+  image_tag:
+    description: The image tag of your build version, ex:latest
+    required: true    
+  ECR_REPOSITORY:
+    description: Your Repository name under the registory
+    required: true    
+  K8S_DEPLOYMENT_NAME:
+    description: Your Deployment under K8s Cluster
+    required: true    
+  K8S_NAMESPACE:
+    description: Your K8S namespace for K8S_DEPLOYMENT_NAME
+    required: true    
+  args:
+    description: The arguments that you want to pass through to the kubectl command
+    required: true
