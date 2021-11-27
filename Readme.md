@@ -1,7 +1,14 @@
 AWS eks-action
 =============
 Interacts with your kubernetes EKS clusters using `kubectl` commands.
-## Usage
+## Usage, Secrets
+
+A base64-encoded of kubeconfig data has to stored in the git secrets for Kubernetes access to the cluster. 
+You can get it by running the following command:
+cat $HOME/.kube/config | base64
+
+KUBECONFIG_SECRET – required
+
 ### EKS Example
 ```yml
 name: Deploy
@@ -24,6 +31,9 @@ jobs:
           ECR_REPOSITORY: $REPO_NAME
           K8S_DEPLOYMENT_NAME: $K8S_DEPLOYMENT_NAME
           K8S_NAMESPACE: $K8S_NAMESPACE
+          KUBECONFIG_SECRET: ${{ secrets.KUBECONFIG_SECRET }}
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: my-app          
           IMAGE_TAG: ${{ github.sha }}
         with:
           args: |
