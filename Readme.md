@@ -33,7 +33,7 @@ jobs:
           K8S_NAMESPACE: $K8S_NAMESPACE
           KUBECONFIG_SECRET: ${{ secrets.KUBECONFIG_SECRET }}
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: my-app          
+          ECR_REPOSITORY: IMAGE_REPO    
           IMAGE_TAG: ${{ github.sha }}
         with:
           args: |
