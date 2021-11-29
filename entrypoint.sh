@@ -20,4 +20,5 @@ echo "$KUBECONFIG_SECRET" | base64 -d > /tmp/config
 export KUBECONFIG=/tmp/config
 sh -c "kubectl get nodes"
 
-sh -c "kubectl $*"
+#sh -c "kubectl $*"
+sh -c "$*"
