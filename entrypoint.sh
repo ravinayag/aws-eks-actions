@@ -18,6 +18,7 @@ sh -c "cat $HOME/.kube/config"
 # Extract the base64 encoded config data and write this to the KUBECONFIG
 echo "$KUBECONFIG_SECRET" | base64 -d > /tmp/config
 export KUBECONFIG=/tmp/config
+cat $KUBECONFIG
 sh -c "kubectl get nodes"
 
 #sh -c "kubectl $*"
