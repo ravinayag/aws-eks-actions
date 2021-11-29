@@ -8,3 +8,6 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+inputs:
+  cluster_name:
+    description: Your EKS cluster name 
