@@ -1,13 +1,13 @@
 #!/bin/sh
 
-set -e
+set -xe
 
-echo ${aws-region}:${aws-access-key-id}:${aws-secret-access-key}:${cluster-name}
-
-sh -c "aws configure set region ${aws-region}"
-sh -c "aws configure set aws_access_key_id ${aws-access-key-id}"
-sh -c "aws configure set aws_secret_access_key ${aws-secret-access-key}"
-sh -c "aws eks update-kubeconfig --region ${aws-region} --name ${cluster-name}"
+echo ${aws_region}:${aws_access_key_id}:${aws_secret_access_key}:${cluster_name}
+#region:access-key-id:secret-access-key:name
+sh -c "aws configure set region ${aws_region}"
+sh -c "aws configure set aws_access_key_id ${aws_access_key_id}"
+sh -c "aws configure set aws_secret_access_key ${aws_secret_access_key}"
+sh -c "aws eks update-kubeconfig --region ${aws_region} --name ${cluster_name}"
 
 #Debug
 sh -c "ls -alrt"
