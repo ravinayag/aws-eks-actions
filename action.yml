@@ -9,19 +9,19 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
 inputs:
-  aws_access_key_id:
+  AWS_ACCESS_KEY_ID:
     description: Your AWS_ACCESS_KEY_ID
     required: true
-  aws_secret_access_key:
+  AWS_SECRET_ACCESS_KEY:
     description: Your AWS_SECRET_ACCESS_KEY
     required: true
-  aws_region:
+  AWS_REGION:
     description: Where the EKS Cluster region set
     required: true
-  cluster_name:
+  CLUSTER_NAME:
     description: Your EKS cluster name 
     required: true
-  image_tag:
+  IMAGE_TAG:
     description: The image tag of your build version, ex:latest /SHA_VALUE (Optional)
     required: true    
   ECR_REPOSITORY:
