@@ -2,6 +2,8 @@
 
 set -e
 
+echo ${aws-region}:${aws-access-key-id}:${aws-secret-access-key}:${cluster-name}
+
 sh -c "aws configure set region ${aws-region}"
 sh -c "aws configure set aws_access_key_id ${aws-access-key-id}"
 sh -c "aws configure set aws_secret_access_key ${aws-secret-access-key}"
